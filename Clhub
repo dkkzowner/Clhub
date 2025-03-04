@@ -306,5 +306,3 @@ local Slider = PlayerTab:CreateSlider({
 
         end,
     })
-
-local JerkTab = Window:CreateTab("Jerk off",4483362458) — Title , Image

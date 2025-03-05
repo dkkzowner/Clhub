@@ -303,3 +303,4 @@ local Slider = PlayerTab:CreateSlider({
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
    end,
 })
+

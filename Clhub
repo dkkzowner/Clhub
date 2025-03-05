@@ -290,7 +290,7 @@ else
 end
 
 local PlayerTab = Window:CreateTab("Character", 4483362458) -- Title, Image
-local PlayerSection = MainTab:CreateSection("Character hacks")
+local PlayerSection = PlayerTab:CreateSection("Character hacks")
 
 local Slider = PlayerTab:CreateSlider({
    Name = "Walkspeed",

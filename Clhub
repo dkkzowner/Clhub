@@ -1,5 +1,3 @@
-CL HUB SRC
-
 loadstring(game:HttpGet("https://raw.githubusercontent.com/s2shubowner/Bypasser/refs/heads/main/bypass"))()
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 

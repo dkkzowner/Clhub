@@ -304,8 +304,6 @@ local Slider = PlayerTab:CreateSlider({
    end,
 })
 
-local PlayerSection = PlayerTab:CreateSection("Jump Height")
-
 local Toggle = PlayerTab:CreateToggle({
    Name = "Fly V3",
    CurrentValue = false,

@@ -325,4 +325,11 @@ local Slider = PlayerTab:CreateSlider({
   end,
 })
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+
+local Button = Tab:CreateButton({
+   Name = "Apartment 1",
+   Callback = function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3, 4, 53)
+   end,
+})
+

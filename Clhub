@@ -363,3 +363,7 @@ local Button = TeleportsTab:CreateButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-532, 5, -347)
    end,
 })
+
+local ExtraTab = Window:CreateTab("Extras", 4483362458) -- Title, Image
+local  ExtraSection =  ExtraTab:CreateSection("Troll")
+

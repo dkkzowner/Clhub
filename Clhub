@@ -365,5 +365,29 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-532, 5,
 })
 
 local ExtraTab = Window:CreateTab("Extras", 4483362458) -- Title, Image
-local  ExtraSection =  ExtraTab:CreateSection("Troll")
+local ExtraSection =  ExtraTab:CreateSection("Troll")
 
+local Toggle = ExtraTab:CreateToggle({
+   Name = "Kill All",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        for _, player in pairs(game.Players:GetChildren()) do
+            if player ~= game.Players.LocalPlayer and player.Character and player.Character:FindFirstChild("UpperTorso") then
+                local fist = game.Players.LocalPlayer.Backpack:FindFirstChild("Fist")
+                if fist and fist:FindFirstChild("Script") then
+                    fist.Script.egma:FireServer(player.Character.UpperTorso, player.Character.Humanoid.Health, game.Players.LocalPlayer.Character.RightHand)
+                    fist.Script.legma:FireServer(player.Character.UpperTorso, player.Character.Humanoid.Health, game.Players.LocalPlayer.Character.RightHand)
+                end
+            end
+            task.wait(0.3) -- Prevents overload
+        end
+        Rayfield:Notify({
+            Title = "Kill All Activated",
+            Content = "Attempted to kill all players.",
+            Duration = 4,
+            Image = 4483362458,
+            Actions = {}
+        })
+    end
+})

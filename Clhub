@@ -336,3 +336,9 @@ local Button TeleportsTab:CreateButton({
    end,
 })
 
+local Button = TeleportsTab:CreateButton({
+   Name = "New ap2",
+   Callback = function()
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(733, 5, 201)
+   end,
+})

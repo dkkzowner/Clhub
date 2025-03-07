@@ -225,6 +225,10 @@ MainTab:CreateButton({
 })
 
 
+local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
+local PlayerSection = PlayerTab:CreateSection("Character Hacks")
+
+
 local Slider = PlayerTab:CreateSlider({
    Name = "Walkspeed",
    Range = {0, 300},
@@ -237,8 +241,6 @@ local Slider = PlayerTab:CreateSlider({
    end,
 })
 
-local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Image
-local PlayerSection = PlayerTab:CreateSection("Character Hacks")
 
 local Toggle = PlayerTab:CreateToggle({
    Name = "Fly V3",

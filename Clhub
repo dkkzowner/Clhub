@@ -326,7 +326,10 @@ local Slider = PlayerTab:CreateSlider({
 })
 
 
-local Button = Tab:CreateButton({
+local TeleportsTab = Window:CreateTab("Teleport", 4483362458) -- Title, Image
+local TeleportsSection = TeleportsTab:CreateSection("Tps")
+
+local Button TeleportsTab:CreateButton({
    Name = "Apartment 1",
    Callback = function()
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3, 4, 53)

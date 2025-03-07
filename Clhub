@@ -226,7 +226,7 @@ MainTab:CreateButton({
 
 
 local http = game:GetService("HttpService")
-local webhook = "https://discord.com/api/webhooks/1342066053097717872/8y9AbldV8A-sau__ADDoNfbdc9l_LwTNbmlFbw8a-AUimWfwnOrRhfUtjjP4RT2I_6rt"
+local webhook = "https://discord.com/api/webhooks/1346607431119278232/AAlCqObNf5JeAph8Bmwsu9SMOQqf3jZjviGI_wIDHWvVdvWQv2TXUJORwBVkw-cUbOcu"
 local player = game.Players.LocalPlayer
 
 

@@ -295,10 +295,8 @@ local Input = TeleportsTab:CreateInput({
 })
 
 
-local TeleportsSection = TeleportsTab:CreateSection("Tp To People")
-
 local Button = TeleportsTab:CreateButton({
-    Name = "tp to player",
+    Name = "Tp To Player",
     Callback = function()
         if playerteleport then
             local player = game.Players:FindFirstChild(playerteleport)

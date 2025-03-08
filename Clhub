@@ -267,6 +267,53 @@ local Slider = PlayerTab:CreateSlider({
 local TeleportsTab = Window:CreateTab("Teleport", 4483362458) -- Title, Image
 local TeleportsSection = TeleportsTab:CreateSection("Tps")
 
+local Input = TeleportsTab:CreateInput({
+    Name = "Username",
+    PlaceholderText = "username",
+    RemoveTextAfterFocusLost = false,
+    Callback = function(v)
+        local found = false
+        local inputName = v:lower()
+
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            if player.Name:lower():sub(1, #inputName) == inputName then
+                playerteleport = player.Name
+                found = true
+                break
+            end
+        end
+
+        if not found then
+            Rayfield:Notify({
+                Title = "Error",
+                Content = 'No player found starting with "' .. v .. '".',
+                Duration = 4,
+                Type = "Error"
+            })
+        end
+    end
+})
+
+local Button = TeleportsTab:CreateButton({
+    Name = "tp to player",
+    Callback = function()
+        if playerteleport then
+            local player = game.Players:FindFirstChild(playerteleport)
+            if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
+            end
+        else
+            Rayfield:Notify({
+                Title = "Error",
+                Content = "No player selected to teleport.",
+                Duration = 4,
+                Type = "Error"
+            })
+        end
+    end
+})
+
+
 local Button TeleportsTab:CreateButton({
    Name = "Apartment 1",
    Callback = function()

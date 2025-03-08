@@ -294,6 +294,9 @@ local Input = TeleportsTab:CreateInput({
     end
 })
 
+
+local TeleportsSection = TeleportsTab:CreateSection("Tp To People")
+
 local Button = TeleportsTab:CreateButton({
     Name = "tp to player",
     Callback = function()
@@ -313,7 +316,8 @@ local Button = TeleportsTab:CreateButton({
     end
 })
 
-local TeleportsSection = TeleportsTab:CreateSection("Ingame Tps")
+
+local TeleportsSection = TeleportsTab:CreateSection("Ingame Teleports")
 
 local Button TeleportsTab:CreateButton({
    Name = "Apartment 1",
@@ -349,6 +353,7 @@ local Button = TeleportsTab:CreateButton({
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-532, 5, -347)
    end,
 })
+
 
 local ExtraTab = Window:CreateTab("Extras", 4483362458) -- Title, Image
 local ExtraSection =  ExtraTab:CreateSection("Troll")
